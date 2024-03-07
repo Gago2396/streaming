@@ -1,0 +1,27 @@
+<div id="contenedor">
+    <div id="video-container">
+        <vg-player [style.display]="isSharingScreenChannel1 ? 'block' : 'none'">
+            <video #videoChannel1 [vgMedia]="$any(videoChannel1)" id="videoChannel1" preload="auto" autoplay
+                crossorigin controls>
+            </video>
+        </vg-player>
+        <vg-player [style.display]="isSharingScreenChannel2 ? 'block' : 'none'">
+            <video #videoChannel2 [vgMedia]="$any(videoChannel2)" id="videoChannel2" preload="auto" autoplay
+                crossorigin controls>
+            </video>
+        </vg-player>
+    </div>
+    <div id="botones">
+        <button (click)="changeChannel('channel1')">Canal 1</button>
+        <button (click)="changeChannel('channel2')">Canal 2</button>
+        <button (click)="openShareScreenModal()">Transmitir</button>
+    </div>
+
+    <div *ngIf="showShareScreenModal" class="modal">
+        <h2>Compartir pantalla</h2>
+        <p>Selecciona algo que transmitir y ¡diles a tus amigos que tomen asiento!</p>
+        <button (click)="shareScreen('channel1')">Transmitir en Canal 1</button>
+        <button (click)="shareScreen('channel2')">Transmitir en Canal 2</button>
+        <button (click)="showShareScreenModal = false">Cancelar</button>
+    </div>
+</div>

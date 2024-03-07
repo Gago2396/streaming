@@ -1,0 +1,23 @@
+#contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #reproductor{
+    max-width: 60%;
+} */
+
+#botones{
+    margin-top: 20px;
+}
+
+vg-player, video {
+    width: 1280px; /* Ajusta el ancho según tus necesidades */
+    height: 720px; /* Ajusta la altura según tus necesidades */
+    background-color: black; /* Fondo negro para cuando el video no cubra todo el espacio */
+    object-fit: contain; /* Asegura que el video se ajuste proporcionalmente dentro del contenedor */
+    display: block; /* Asegura que el reproductor use todo el espacio asignado */
+    margin: 0 auto; /* Centra el reproductor si es más pequeño que el área asignada */
+}
